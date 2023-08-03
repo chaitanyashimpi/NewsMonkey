@@ -6,6 +6,7 @@ import LoadingBar from 'react-top-loading-bar'
 
 
 export default class App extends Component {
+  apiKey = process.env.REACT_APP_NEWS_API;
   state = {
     progress: 0
   }
@@ -22,7 +23,7 @@ export default class App extends Component {
           color='#f11946'
           progress={this.state.progress}
         />
-        <News setProgress={this.setProgress} pageSize = '6' country='in' category={category}/>
+        <News setProgress={this.setProgress} apiKey={this.apiKey} pageSize = '6' country='in' category={category}/>
       </>
     );
   }
